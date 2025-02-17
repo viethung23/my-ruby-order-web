@@ -1,0 +1,26 @@
+<h1>Danh sách bài viết</h1>
+
+<%= link_to "Tạo bài viết mới", new_post_path, class: "btn btn-primary" %>
+<h1>hung day</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Tiêu đề</th>
+      <th>Nội dung</th>
+      <th>Hành động</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.body %></td>
+        <td>
+          <%= link_to "Xem", post, class: "btn btn-info" %>
+          <%= link_to "Sửa", edit_post_path(post), class: "btn btn-warning" %>
+          <%= button_to "Xóa", post, method: :delete, class: "btn btn-danger" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

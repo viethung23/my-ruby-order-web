@@ -1,0 +1,17 @@
+<h1>Tạo bài viết mới</h1>
+
+<%= form_with model: @post, local: true do |form| %>
+  <div class="form-group">
+    <%= form.label :title, "Tiêu đề" %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :body, "Nội dung" %>
+    <%= form.text_area :body, class: "form-control" %>
+  </div>
+
+  <%= form.submit "Tạo bài viết", class: "btn btn-primary" %>
+<% end %>
+
+<%= link_to "Quay lại", posts_path, class: "btn btn-secondary" %>
